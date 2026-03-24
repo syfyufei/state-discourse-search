@@ -1,0 +1,986 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="zh-Hans" xml:lang="zh-Hans"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.6.39">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>数据集概览 – 国家话语数据集使用手册</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+</style>
+
+
+<script src="site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="site_libs/quarto-nav/headroom.min.js"></script>
+<script src="site_libs/clipboard/clipboard.min.js"></script>
+<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="site_libs/quarto-search/fuse.min.js"></script>
+<script src="site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="./">
+<link href="./skills-intro.html" rel="next">
+<link href="./index.html" rel="prev">
+<script src="site_libs/quarto-html/quarto.js"></script>
+<script src="site_libs/quarto-html/popper.min.js"></script>
+<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="site_libs/quarto-html/anchor.min.js"></script>
+<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-0626ff4d7a71b55c8707dcae1d04a9b6.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="site_libs/bootstrap/bootstrap-f6c1173c8ea759d7f2d7c6dc7429bbc5.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "sidebar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "start",
+  "type": "textbox",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "没有结果",
+    "search-matching-documents-text": "匹配的文档",
+    "search-copy-link-title": "复制搜索链接",
+    "search-hide-matches-text": "隐藏其它匹配结果",
+    "search-more-match-text": "更多匹配结果",
+    "search-more-matches-text": "更多匹配结果",
+    "search-clear-button-title": "清除",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "取消",
+    "search-submit-button-title": "提交",
+    "search-label": "搜索"
+  }
+}</script>
+<style>html{ scroll-behavior: smooth; }</style>
+
+
+</head>
+
+<body class="nav-sidebar docked">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+  <nav class="quarto-secondary-nav">
+    <div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="展开或折叠侧边栏导航" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
+      </button>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./overview.html"><span class="chapter-title">数据集概览</span></a></li></ol></nav>
+        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="展开或折叠侧边栏导航" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        </a>
+      <button type="button" class="btn quarto-search-button" aria-label="搜索" onclick="window.quartoOpenSearch();">
+        <i class="bi bi-search"></i>
+      </button>
+    </div>
+  </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation docked overflow-auto">
+    <div class="pt-lg-2 mt-2 text-left sidebar-header">
+    <div class="sidebar-title mb-0 py-0">
+      <a href="./">国家话语数据集使用手册</a> 
+        <div class="sidebar-tools-main">
+    <a href="https://github.com/" title="Source Code" class="quarto-navigation-tool px-1" aria-label="Source Code"><i class="bi bi-github"></i></a>
+</div>
+    </div>
+      </div>
+        <div class="mt-2 flex-shrink-0 align-items-center">
+        <div class="sidebar-search">
+        <div id="quarto-search" class="" title="搜索"></div>
+        </div>
+        </div>
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./index.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">欢迎 | Welcome</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./overview.html" class="sidebar-item-text sidebar-link active"><span class="chapter-title">数据集概览</span></a>
+  </div>
+</li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true">
+ <span class="menu-text">技能提示词指南</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true" aria-label="展开或折叠此栏">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./skills-intro.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">技能提示词：是什么，怎么用</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./skills-general.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">通用技能：skill_general</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./skills-policy.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">政策话语演变：skill_policy</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./skills-ideology.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">意识形态比较：skill_ideology</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./skills-codewriter.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">代码生成：skill_codewriter</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./search-guide.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">语料搜索系统</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./scripts-guide.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">数据加载脚本</span></a>
+  </div>
+</li>
+    </ul>
+    </div>
+</nav>
+<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">本页目录</h2>
+   
+  <ul>
+  <li><a href="#overview-stats" id="toc-overview-stats" class="nav-link active" data-scroll-target="#overview-stats">总体规模</a></li>
+  <li><a href="#xi-speeches" id="toc-xi-speeches" class="nav-link" data-scroll-target="#xi-speeches">类别一：习近平系列重要讲话数据库</a></li>
+  <li><a href="#rmrb" id="toc-rmrb" class="nav-link" data-scroll-target="#rmrb">类别二：人民网政绩观专题文章</a></li>
+  <li><a href="#leaders" id="toc-leaders" class="nav-link" data-scroll-target="#leaders">类别三：领导人著作选集</a></li>
+  <li><a href="#congress" id="toc-congress" class="nav-link" data-scroll-target="#congress">类别四：全国党代会文件</a></li>
+  <li><a href="#npc" id="toc-npc" class="nav-link" data-scroll-target="#npc">类别五：全国两会文件</a></li>
+  <li><a href="#whitepaper" id="toc-whitepaper" class="nav-link" data-scroll-target="#whitepaper">类别六：政府白皮书</a></li>
+  <li><a href="#party-rules" id="toc-party-rules" class="nav-link" data-scroll-target="#party-rules">类别七：党规党史与五年规划</a></li>
+  <li><a href="#ideology" id="toc-ideology" class="nav-link" data-scroll-target="#ideology">类别八：意识形态与发展理念文件</a></li>
+  <li><a href="#qiushi" id="toc-qiushi" class="nav-link" data-scroll-target="#qiushi">类别九：《求是》杂志</a></li>
+  <li><a href="#choose-data" id="toc-choose-data" class="nav-link" data-scroll-target="#choose-data">如何选择适合自己研究问题的数据？</a></li>
+  </ul>
+<div class="toc-actions"><ul><li><a href="https://github.com/issues/new" class="toc-action"><i class="bi bi-github"></i>反馈问题</a></li></ul></div></nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title"><span class="chapter-title">数据集概览</span></h1>
+<p class="subtitle lead">Dataset Overview — What’s Inside</p>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<blockquote class="blockquote">
+<p>本章介绍数据集中九大类别的具体内容、字段说明和适用研究方向。</p>
+</blockquote>
+<hr>
+<section id="overview-stats" class="level2">
+<h2 class="anchored" data-anchor-id="overview-stats">总体规模</h2>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th>指标</th>
+<th>数值</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>总文件数</td>
+<td>311 个（308 个 Excel + 2 个 CSV）</td>
+</tr>
+<tr class="even">
+<td>总体量</td>
+<td>约 47.5 MB</td>
+</tr>
+<tr class="odd">
+<td>时间跨度</td>
+<td>1950 年代 — 2026 年</td>
+</tr>
+<tr class="even">
+<td>语言</td>
+<td>中文</td>
+</tr>
+</tbody>
+</table>
+<hr>
+</section>
+<section id="xi-speeches" class="level2">
+<h2 class="anchored" data-anchor-id="xi-speeches">类别一：习近平系列重要讲话数据库</h2>
+<p><strong>文件</strong>：<code>习近平系列重要讲话数据库.csv</code> <strong>规模</strong>：48,610 条记录</p>
+<p>这是数据集中<strong>规模最大、结构最规整</strong>的数据，以 CSV 格式存储，每行对应一篇讲话或文章。</p>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th>字段名</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><code>标题</code></td>
+<td>讲话或文章的标题</td>
+</tr>
+<tr class="even">
+<td><code>中文</code></td>
+<td>正文全文</td>
+</tr>
+<tr class="odd">
+<td><code>发布时间</code></td>
+<td>发布日期</td>
+</tr>
+<tr class="even">
+<td><code>字段</code></td>
+<td>主题领域分类（如：经济、外交、党建）</td>
+</tr>
+<tr class="odd">
+<td><code>标题链接</code></td>
+<td>原文网址</td>
+</tr>
+</tbody>
+</table>
+<p><strong>适合研究</strong>：习近平执政话语特征、特定议题（经济/外交/反腐/生态）关键词频次、话语风格演变</p>
+<hr>
+</section>
+<section id="rmrb" class="level2">
+<h2 class="anchored" data-anchor-id="rmrb">类别二：人民网政绩观专题文章</h2>
+<p><strong>文件</strong>：<code>人民网_政绩观.csv</code> <strong>规模</strong>：194 条记录（2025-2026 年）</p>
+<p>《人民日报》专题报道，聚焦「正确政绩观」这一近期核心话语。</p>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th>字段名</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><code>title</code></td>
+<td>文章标题</td>
+</tr>
+<tr class="even">
+<td><code>full_text</code></td>
+<td>正文全文</td>
+</tr>
+<tr class="odd">
+<td><code>date</code></td>
+<td>发布日期</td>
+</tr>
+<tr class="even">
+<td><code>source</code></td>
+<td>来源（人民日报等）</td>
+</tr>
+<tr class="odd">
+<td><code>snippet</code></td>
+<td>摘要</td>
+</tr>
+<tr class="even">
+<td><code>url</code></td>
+<td>原文链接</td>
+</tr>
+</tbody>
+</table>
+<p><strong>适合研究</strong>：当代党政绩效评价话语、反腐廉政叙事、地方治理话语</p>
+<hr>
+</section>
+<section id="leaders" class="level2">
+<h2 class="anchored" data-anchor-id="leaders">类别三：领导人著作选集</h2>
+<p><strong>文件</strong>：32 个 Excel 文件，共 25+ 卷</p>
+<p>跨越七十余年的领导人著作，是做<strong>跨时期话语比较</strong>的核心数据来源。</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 34%">
+<col style="width: 26%">
+<col style="width: 39%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>领导人</th>
+<th>文本</th>
+<th>大致时代</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>毛泽东</td>
+<td>毛泽东选集（第 1-5 卷）</td>
+<td>1920s-1970s</td>
+</tr>
+<tr class="even">
+<td>刘少奇</td>
+<td>刘少奇选集（上下册）</td>
+<td>1940s-1960s</td>
+</tr>
+<tr class="odd">
+<td>周恩来</td>
+<td>周恩来选集（上下册）</td>
+<td>1940s-1970s</td>
+</tr>
+<tr class="even">
+<td>朱德</td>
+<td>朱德选集</td>
+<td>1920s-1970s</td>
+</tr>
+<tr class="odd">
+<td>陈云</td>
+<td>陈云文选（第 1-3 卷）</td>
+<td>1950s-1980s</td>
+</tr>
+<tr class="even">
+<td>邓小平</td>
+<td>邓小平文选（第 1-3 卷）</td>
+<td>1950s-1990s</td>
+</tr>
+<tr class="odd">
+<td>江泽民</td>
+<td>江泽民文选（第 1-3 卷）</td>
+<td>1989-2002</td>
+</tr>
+<tr class="even">
+<td>习近平</td>
+<td>习近平谈治国理政（第 1-3 卷）</td>
+<td>2012-</td>
+</tr>
+<tr class="odd">
+<td>习近平</td>
+<td>习近平论述摘编（深化改革 / 中国梦 / 新冠与经济 / 法治 / 反腐 / 人权）</td>
+<td>2012-</td>
+</tr>
+</tbody>
+</table>
+<p><strong>通用字段</strong>：<code>中文</code>（正文全文）、<code>书名</code>（来源卷册）</p>
+<p><strong>适合研究</strong>：跨领导人话语比较、意识形态演变谱系、特定概念（改革/法治/民主/人权）的话语建构</p>
+<hr>
+</section>
+<section id="congress" class="level2">
+<h2 class="anchored" data-anchor-id="congress">类别四：全国党代会文件</h2>
+<p><strong>文件</strong>：39 个 Excel 文件</p>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th>会议</th>
+<th>时间</th>
+<th>主要文件类型</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>十六大</td>
+<td>2002</td>
+<td>政治报告、纪检报告、党章修正案</td>
+</tr>
+<tr class="even">
+<td>十七大</td>
+<td>2007</td>
+<td>政治报告、纪检报告、党章修正案</td>
+</tr>
+<tr class="odd">
+<td>十八大</td>
+<td>2012</td>
+<td>政治报告</td>
+</tr>
+<tr class="even">
+<td>十九大</td>
+<td>2017</td>
+<td>政治报告、纪检报告、党章修正案</td>
+</tr>
+<tr class="odd">
+<td>十八届各全会</td>
+<td>2014-2016</td>
+<td>公报、决定、准则</td>
+</tr>
+<tr class="even">
+<td>十九届各全会</td>
+<td>2020-2021</td>
+<td>公报、决议</td>
+</tr>
+</tbody>
+</table>
+<p><strong>通用字段</strong>：<code>中文</code>（全文）、<code>文件名称</code>（文件类型）</p>
+<p><strong>适合研究</strong>：路线方针五年演变、党建话语制度化、重大政治转向的话语分析</p>
+<hr>
+</section>
+<section id="npc" class="level2">
+<h2 class="anchored" data-anchor-id="npc">类别五：全国两会文件</h2>
+<p><strong>文件</strong>：130 个 Excel 文件（1998-2023，<strong>连续 26 年</strong>）</p>
+<p>这是整个数据集中<strong>时间序列最完整</strong>的部分，每年五份核心文件：</p>
+<ul>
+<li>政府工作报告</li>
+<li>国民经济和社会发展计划报告</li>
+<li>中央财政预算报告</li>
+<li>全国人大常委会工作报告</li>
+<li>全国政协工作报告</li>
+</ul>
+<p><strong>通用字段</strong>：<code>中文</code>（全文）、<code>文件名称</code>（文件类型）、<code>发表时间</code>（年份）</p>
+<p><strong>适合研究</strong>：政策话语年度演变、经济目标表述变化、话语风格历时分析</p>
+<hr>
+</section>
+<section id="whitepaper" class="level2">
+<h2 class="anchored" data-anchor-id="whitepaper">类别六：政府白皮书</h2>
+<p><strong>文件</strong>：89 个 Excel 文件（2010-2021）</p>
+<p>国务院新闻办公室发布的权威官方政策阐释文件，议题广泛：</p>
+<p>反腐廉政、对外贸易、人力资源、法律体系、农村扶贫、 国防（2010/2012/2014）、气候变化、航天、西藏、 医疗卫生、司法改革、钓鱼岛主权、稀土、能源等</p>
+<p><strong>适合研究</strong>：官方叙事框架分析、敏感议题的话语建构、对外宣传话语策略</p>
+<hr>
+</section>
+<section id="party-rules" class="level2">
+<h2 class="anchored" data-anchor-id="party-rules">类别七：党规党史与五年规划</h2>
+<p><strong>文件</strong>：14 个 Excel 文件</p>
+<p><strong>党规</strong>（7 份）：党章、党内政治生活准则、廉洁自律准则、纪检工作规则、问责条例、党内监督条例、纪律处分条例</p>
+<p><strong>党史</strong>（5 份）：中国共产党历史（第 1-2 卷）、党史七十年、中国共产党简史、抗日战争史简明读本</p>
+<p><strong>五年规划</strong>（2 份）：十三五（2016-2020）、十四五（2021-2025 附 2035 远景目标）</p>
+<p><strong>适合研究</strong>：制度性话语分析、纪律话语演变、党的历史叙事建构、中长期目标话语</p>
+<hr>
+</section>
+<section id="ideology" class="level2">
+<h2 class="anchored" data-anchor-id="ideology">类别八：意识形态与发展理念文件</h2>
+<p><strong>文件</strong>：3 个 Excel 文件</p>
+<ul>
+<li>科学发展观关键语句（胡锦涛时代核心话语精炼版）</li>
+<li>中共中央关于完整准确全面贯彻新发展理念做好碳达峰碳中和工作的意见</li>
+<li>2030 年前碳达峰行动方案</li>
+</ul>
+<p><strong>适合研究</strong>：发展理念话语演变、生态文明话语的意识形态建构、政策目标的话语呈现</p>
+<hr>
+</section>
+<section id="qiushi" class="level2">
+<h2 class="anchored" data-anchor-id="qiushi">类别九：《求是》杂志</h2>
+<p><strong>文件</strong>：42 个 Excel 文件（多期）</p>
+<p>《求是》是中共中央主办的旗舰理论刊物，专门负责对党的路线方针进行理论阐释和意识形态宣传。</p>
+<p><strong>通用字段</strong>：<code>中文</code>（正文）、<code>文件名称</code>（期号）</p>
+<p><strong>适合研究</strong>：官方理论话语体系、意识形态宣传机制、政治话语的学术化过程</p>
+<hr>
+</section>
+<section id="choose-data" class="level2">
+<h2 class="anchored" data-anchor-id="choose-data">如何选择适合自己研究问题的数据？</h2>
+<table class="caption-top table" data-quarto-postprocess="true">
+<thead>
+<tr class="header" style="background:#1a1a2e; color:#fff;">
+<th data-quarto-table-cell-role="th" style="text-align: left; padding: 10px 14px;">研究问题类型</th>
+<th data-quarto-table-cell-role="th" style="text-align: left; padding: 10px 14px;">推荐数据类别</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd" style="background:#f8f9fa;">
+<td style="padding: 10px 14px">追踪某个词/概念随时间的变化</td>
+<td style="padding: 10px 14px">两会文件（1998-2023）、习近平讲话数据库</td>
+</tr>
+<tr class="even">
+<td style="padding: 10px 14px">比较不同领导人的话语风格</td>
+<td style="padding: 10px 14px">领导人著作选集</td>
+</tr>
+<tr class="odd" style="background:#f8f9fa;">
+<td style="padding: 10px 14px">分析党的路线方针演变</td>
+<td style="padding: 10px 14px">党代会文件、党规党史</td>
+</tr>
+<tr class="even">
+<td style="padding: 10px 14px">研究某个政策议题的官方叙事</td>
+<td style="padding: 10px 14px">政府白皮书、习近平讲话数据库</td>
+</tr>
+<tr class="odd" style="background:#f8f9fa;">
+<td style="padding: 10px 14px">研究意识形态与理论话语</td>
+<td style="padding: 10px 14px">《求是》杂志、意识形态文件、领导人著作</td>
+</tr>
+<tr class="even">
+<td style="padding: 10px 14px">当代治理与反腐话语</td>
+<td style="padding: 10px 14px">人民网政绩观、习近平讲话数据库、党规</td>
+</tr>
+</tbody>
+</table>
+<hr>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+下一步
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>了解完数据内容后，推荐进入 <a href="./skills-intro.html"><strong>技能提示词指南</strong></a>，学习如何让大模型帮你分析这些数据。</p>
+</div>
+</div>
+
+
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const isCodeAnnotation = (el) => {
+    for (const clz of el.classList) {
+      if (clz.startsWith('code-annotation-')) {                     
+        return true;
+      }
+    }
+    return false;
+  }
+  const onCopySuccess = function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "已复制");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "已复制");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  }
+  const getTextToCopy = function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+    text: getTextToCopy
+  });
+  clipboard.on('success', onCopySuccess);
+  if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+    const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+      text: getTextToCopy,
+      container: window.document.getElementById('quarto-embedded-source-code-modal')
+    });
+    clipboardModal.on('success', onCopySuccess);
+  }
+    var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+    var mailtoRegex = new RegExp(/^mailto:/);
+      var filterRegex = new RegExp('/' + window.location.host + '/');
+    var isInternal = (href) => {
+        return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+    }
+    // Inspect non-navigation links and adorn them if external
+ 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+    for (var i=0; i<links.length; i++) {
+      const link = links[i];
+      if (!isInternal(link.href)) {
+        // undo the damage that might have been done by quarto-nav.js in the case of
+        // links that we want to consider external
+        if (link.dataset.originalHref !== undefined) {
+          link.href = link.dataset.originalHref;
+        }
+      }
+    }
+  function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+    const config = {
+      allowHTML: true,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start',
+    };
+    if (contentFn) {
+      config.content = contentFn;
+    }
+    if (onTriggerFn) {
+      config.onTrigger = onTriggerFn;
+    }
+    if (onUntriggerFn) {
+      config.onUntrigger = onUntriggerFn;
+    }
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      if (note) {
+        return note.innerHTML;
+      } else {
+        return "";
+      }
+    });
+  }
+  const xrefs = window.document.querySelectorAll('a.quarto-xref');
+  const processXRef = (id, note) => {
+    // Strip column container classes
+    const stripColumnClz = (el) => {
+      el.classList.remove("page-full", "page-columns");
+      if (el.children) {
+        for (const child of el.children) {
+          stripColumnClz(child);
+        }
+      }
+    }
+    stripColumnClz(note)
+    if (id === null || id.startsWith('sec-')) {
+      // Special case sections, only their first couple elements
+      const container = document.createElement("div");
+      if (note.children && note.children.length > 2) {
+        container.appendChild(note.children[0].cloneNode(true));
+        for (let i = 1; i < note.children.length; i++) {
+          const child = note.children[i];
+          if (child.tagName === "P" && child.innerText === "") {
+            continue;
+          } else {
+            container.appendChild(child.cloneNode(true));
+            break;
+          }
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(container);
+        }
+        return container.innerHTML
+      } else {
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        return note.innerHTML;
+      }
+    } else {
+      // Remove any anchor links if they are present
+      const anchorLink = note.querySelector('a.anchorjs-link');
+      if (anchorLink) {
+        anchorLink.remove();
+      }
+      if (window.Quarto?.typesetMath) {
+        window.Quarto.typesetMath(note);
+      }
+      if (note.classList.contains("callout")) {
+        return note.outerHTML;
+      } else {
+        return note.innerHTML;
+      }
+    }
+  }
+  for (var i=0; i<xrefs.length; i++) {
+    const xref = xrefs[i];
+    tippyHover(xref, undefined, function(instance) {
+      instance.disable();
+      let url = xref.getAttribute('href');
+      let hash = undefined; 
+      if (url.startsWith('#')) {
+        hash = url;
+      } else {
+        try { hash = new URL(url).hash; } catch {}
+      }
+      if (hash) {
+        const id = hash.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note !== null) {
+          try {
+            const html = processXRef(id, note.cloneNode(true));
+            instance.setContent(html);
+          } finally {
+            instance.enable();
+            instance.show();
+          }
+        } else {
+          // See if we can fetch this
+          fetch(url.split('#')[0])
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.getElementById(id);
+            if (note !== null) {
+              const html = processXRef(id, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      } else {
+        // See if we can fetch a full url (with no hash to target)
+        // This is a special case and we should probably do some content thinning / targeting
+        fetch(url)
+        .then(res => res.text())
+        .then(html => {
+          const parser = new DOMParser();
+          const htmlDoc = parser.parseFromString(html, "text/html");
+          const note = htmlDoc.querySelector('main.content');
+          if (note !== null) {
+            // This should only happen for chapter cross references
+            // (since there is no id in the URL)
+            // remove the first header
+            if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+              note.children[0].remove();
+            }
+            const html = processXRef(null, note);
+            instance.setContent(html);
+          } 
+        }).finally(() => {
+          instance.enable();
+          instance.show();
+        });
+      }
+    }, function(instance) {
+    });
+  }
+      let selectedAnnoteEl;
+      const selectorForAnnotation = ( cell, annotation) => {
+        let cellAttr = 'data-code-cell="' + cell + '"';
+        let lineAttr = 'data-code-annotation="' +  annotation + '"';
+        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+        return selector;
+      }
+      const selectCodeLines = (annoteEl) => {
+        const doc = window.document;
+        const targetCell = annoteEl.getAttribute("data-target-cell");
+        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+        const lineIds = lines.map((line) => {
+          return targetCell + "-" + line;
+        })
+        let top = null;
+        let height = null;
+        let parent = null;
+        if (lineIds.length > 0) {
+            //compute the position of the single el (top and bottom and make a div)
+            const el = window.document.getElementById(lineIds[0]);
+            top = el.offsetTop;
+            height = el.offsetHeight;
+            parent = el.parentElement.parentElement;
+          if (lineIds.length > 1) {
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+            height = bottom - top;
+          }
+          if (top !== null && height !== null && parent !== null) {
+            // cook up a div (if necessary) and position it 
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
+            }
+            div.style.top = top - 2 + "px";
+            div.style.height = height + 4 + "px";
+            div.style.left = 0;
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
+            }
+            gutterDiv.style.top = top - 2 + "px";
+            gutterDiv.style.height = height + 4 + "px";
+          }
+          selectedAnnoteEl = annoteEl;
+        }
+      };
+      const unselectCodeLines = () => {
+        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+        elementsIds.forEach((elId) => {
+          const div = window.document.getElementById(elId);
+          if (div) {
+            div.remove();
+          }
+        });
+        selectedAnnoteEl = undefined;
+      };
+        // Handle positioning of the toggle
+    window.addEventListener(
+      "resize",
+      throttle(() => {
+        elRect = undefined;
+        if (selectedAnnoteEl) {
+          selectCodeLines(selectedAnnoteEl);
+        }
+      }, 10)
+    );
+    function throttle(fn, ms) {
+    let throttle = false;
+    let timer;
+      return (...args) => {
+        if(!throttle) { // first call gets through
+            fn.apply(this, args);
+            throttle = true;
+        } else { // all the others get throttled
+            if(timer) clearTimeout(timer); // cancel #2
+            timer = setTimeout(() => {
+              fn.apply(this, args);
+              timer = throttle = false;
+            }, ms);
+        }
+      };
+    }
+      // Attach click handler to the DT
+      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+      for (const annoteDlNode of annoteDls) {
+        annoteDlNode.addEventListener('click', (event) => {
+          const clickedEl = event.target;
+          if (clickedEl !== selectedAnnoteEl) {
+            unselectCodeLines();
+            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+            if (activeEl) {
+              activeEl.classList.remove('code-annotation-active');
+            }
+            selectCodeLines(clickedEl);
+            clickedEl.classList.add('code-annotation-active');
+          } else {
+            // Unselect the line
+            unselectCodeLines();
+            clickedEl.classList.remove('code-annotation-active');
+          }
+        });
+      }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script>
+<nav class="page-navigation">
+  <div class="nav-page nav-page-previous">
+      <a href="./index.html" class="pagination-link" aria-label="欢迎 | Welcome">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-title">欢迎 | Welcome</span></span>
+      </a>          
+  </div>
+  <div class="nav-page nav-page-next">
+      <a href="./skills-intro.html" class="pagination-link" aria-label="技能提示词：是什么，怎么用">
+        <span class="nav-page-text"><span class="chapter-title">技能提示词：是什么，怎么用</span></span> <i class="bi bi-arrow-right-short"></i>
+      </a>
+  </div>
+</nav>
+</div> <!-- /content -->
+
+
+
+
+<footer class="footer"><div class="nav-footer"><div class="nav-footer-center"><div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/issues/new" class="toc-action"><i class="bi bi-github"></i>反馈问题</a></li></ul></div></div></div></footer><script src="site_libs/quarto-html/zenscroll-min.js"></script>
+</body></html>

@@ -1,0 +1,421 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>国家话语数据集 | 语料检索</title>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "PingFang SC", "Hiragino Sans GB",
+                   "Microsoft YaHei", "Segoe UI", sans-serif;
+      background: #f8f9fa;
+      color: #212529;
+      line-height: 1.6;
+    }
+
+    /* ── Header ── */
+    header {
+      background: #1a1a2e;
+      color: #fff;
+      padding: 24px 32px 20px;
+    }
+    header h1 { font-size: 1.5rem; font-weight: 700; margin-bottom: 4px; }
+    header p  { font-size: 0.875rem; opacity: 0.75; }
+
+    /* ── Search bar ── */
+    .search-wrap {
+      background: #fff;
+      border-bottom: 1px solid #dee2e6;
+      padding: 20px 32px;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      box-shadow: 0 2px 8px rgba(0,0,0,.06);
+    }
+    .search-row {
+      display: flex;
+      gap: 12px;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+    #query {
+      flex: 1;
+      min-width: 220px;
+      height: 44px;
+      padding: 0 16px;
+      border: 1.5px solid #ced4da;
+      border-radius: 8px;
+      font-size: 1rem;
+      outline: none;
+      transition: border-color .2s;
+    }
+    #query:focus { border-color: #4361ee; }
+
+    select {
+      height: 44px;
+      padding: 0 12px;
+      border: 1.5px solid #ced4da;
+      border-radius: 8px;
+      font-size: 0.9rem;
+      background: #fff;
+      cursor: pointer;
+      outline: none;
+    }
+    select:focus { border-color: #4361ee; }
+
+    .filter-row {
+      display: flex;
+      gap: 12px;
+      margin-top: 12px;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+    .filter-row label { font-size: 0.85rem; color: #6c757d; white-space: nowrap; }
+    .filter-row input[type=number] {
+      width: 90px;
+      height: 36px;
+      padding: 0 10px;
+      border: 1.5px solid #ced4da;
+      border-radius: 6px;
+      font-size: 0.9rem;
+      outline: none;
+    }
+    .filter-row input[type=number]:focus { border-color: #4361ee; }
+
+    /* ── Stats ── */
+    .stats {
+      padding: 12px 32px;
+      font-size: 0.85rem;
+      color: #6c757d;
+    }
+
+    /* ── Results ── */
+    main { padding: 0 32px 48px; max-width: 960px; margin: 0 auto; }
+
+    .result-card {
+      background: #fff;
+      border: 1px solid #e9ecef;
+      border-radius: 10px;
+      padding: 16px 20px;
+      margin-bottom: 12px;
+      transition: box-shadow .15s;
+    }
+    .result-card:hover { box-shadow: 0 4px 16px rgba(0,0,0,.08); }
+
+    .card-meta {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 8px;
+      flex-wrap: wrap;
+    }
+    .badge {
+      display: inline-block;
+      padding: 2px 10px;
+      border-radius: 20px;
+      font-size: 0.75rem;
+      font-weight: 600;
+      white-space: nowrap;
+    }
+    .badge-习近平讲话   { background: #ffd6a5; color: #7d4e00; }
+    .badge-人民网政绩观 { background: #ffc8dd; color: #6a0032; }
+    .badge-领导人著作   { background: #caffbf; color: #1a5c00; }
+    .badge-党代会       { background: #9bf6ff; color: #005c6b; }
+    .badge-两会         { background: #a0c4ff; color: #003399; }
+    .badge-白皮书       { background: #bdb2ff; color: #3d0080; }
+    .badge-党规党史     { background: #fdffb6; color: #5c5000; }
+    .badge-意识形态     { background: #e8d5b7; color: #5c3a00; }
+    .badge-求是         { background: #d5e8d4; color: #1a4700; }
+
+    .card-title {
+      font-size: 0.95rem;
+      font-weight: 600;
+      color: #343a40;
+      flex: 1;
+    }
+    .card-date {
+      font-size: 0.8rem;
+      color: #868e96;
+      white-space: nowrap;
+    }
+    .card-source {
+      font-size: 0.78rem;
+      color: #adb5bd;
+      margin-bottom: 8px;
+    }
+    .card-snippet {
+      font-size: 0.9rem;
+      color: #495057;
+      line-height: 1.7;
+    }
+    .highlight {
+      background: #fff3bf;
+      border-radius: 3px;
+      padding: 0 2px;
+      font-weight: 600;
+    }
+
+    /* ── Empty / Loading ── */
+    .empty {
+      text-align: center;
+      padding: 64px 32px;
+      color: #adb5bd;
+    }
+    .empty h2 { font-size: 1.1rem; margin-bottom: 8px; }
+    .empty p  { font-size: 0.9rem; }
+
+    #loading {
+      text-align: center;
+      padding: 64px;
+      color: #6c757d;
+      font-size: 1rem;
+    }
+
+    /* ── Pagination ── */
+    .pagination {
+      display: flex;
+      justify-content: center;
+      gap: 8px;
+      margin-top: 24px;
+      flex-wrap: wrap;
+    }
+    .pagination button {
+      padding: 6px 14px;
+      border: 1px solid #dee2e6;
+      border-radius: 6px;
+      background: #fff;
+      cursor: pointer;
+      font-size: 0.875rem;
+      transition: background .15s;
+    }
+    .pagination button:hover:not(:disabled) { background: #e9ecef; }
+    .pagination button.active { background: #4361ee; color: #fff; border-color: #4361ee; }
+    .pagination button:disabled { opacity: 0.4; cursor: default; }
+
+    @media (max-width: 600px) {
+      header, .search-wrap, .stats, main { padding-left: 16px; padding-right: 16px; }
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <h1>国家话语数据集 | State Discourse Dataset</h1>
+  <p>中国官方政治话语语料库搜索系统 · 311 个文件 · 1950s–2026</p>
+</header>
+
+<div class="search-wrap">
+  <div class="search-row">
+    <input id="query" type="text" placeholder="输入关键词检索，如：共同富裕、生态文明、依法治国…"
+           autocomplete="off" autofocus>
+    <select id="categoryFilter">
+      <option value="">全部类别</option>
+      <option value="习近平讲话">习近平讲话</option>
+      <option value="人民网政绩观">人民网政绩观</option>
+      <option value="领导人著作">领导人著作</option>
+      <option value="党代会">党代会</option>
+      <option value="两会">两会</option>
+      <option value="白皮书">白皮书</option>
+      <option value="党规党史">党规党史</option>
+      <option value="意识形态">意识形态</option>
+      <option value="求是">求是</option>
+    </select>
+  </div>
+  <div class="filter-row">
+    <label>年份范围：</label>
+    <input id="yearStart" type="number" placeholder="起始年" min="1950" max="2026">
+    <span style="color:#adb5bd">—</span>
+    <input id="yearEnd" type="number" placeholder="结束年" min="1950" max="2026">
+  </div>
+</div>
+
+<div class="stats" id="stats"></div>
+
+<main id="results">
+  <div id="loading">正在加载索引…</div>
+</main>
+
+<script>
+// ── 配置 ──────────────────────────────────────────────────────────
+const PAGE_SIZE = 20;   // 每页显示条数
+const DEBOUNCE_MS = 200; // 搜索防抖延迟
+
+// ── 状态 ──────────────────────────────────────────────────────────
+let allRecords = [];
+let filteredRecords = [];
+let currentPage = 1;
+
+// ── 加载索引 ──────────────────────────────────────────────────────
+fetch('search_index.json')
+  .then(r => {
+    if (!r.ok) throw new Error(`HTTP ${r.status}`);
+    return r.json();
+  })
+  .then(data => {
+    allRecords = data;
+    document.getElementById('loading').remove();
+    renderStats(allRecords.length, allRecords.length);
+    renderEmpty('请在上方输入关键词开始检索');
+  })
+  .catch(err => {
+    document.getElementById('loading').innerHTML =
+      `<p style="color:#dc3545">无法加载索引文件（search_index.json）。</p>
+       <p style="font-size:.85rem;margin-top:8px">请先运行 <code>python search/build_index.py</code> 生成索引。</p>
+       <p style="font-size:.8rem;color:#adb5bd;margin-top:4px">${err}</p>`;
+  });
+
+// ── 搜索逻辑 ──────────────────────────────────────────────────────
+function escapeRegex(s) {
+  return s.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+}
+
+function doSearch() {
+  const query = document.getElementById('query').value.trim();
+  const category = document.getElementById('categoryFilter').value;
+  const yearStart = parseInt(document.getElementById('yearStart').value) || null;
+  const yearEnd   = parseInt(document.getElementById('yearEnd').value) || null;
+
+  if (!query && !category && !yearStart && !yearEnd) {
+    filteredRecords = [];
+    renderStats(allRecords.length, 0);
+    renderEmpty('请在上方输入关键词开始检索');
+    return;
+  }
+
+  const terms = query ? query.split(/\s+/).filter(Boolean) : [];
+
+  filteredRecords = allRecords.filter(rec => {
+    // 类别筛选
+    if (category && rec.category !== category) return false;
+
+    // 年份筛选
+    if (yearStart || yearEnd) {
+      const y = parseInt((rec.date || '').match(/\d{4}/)?.[0]) || null;
+      if (yearStart && (!y || y < yearStart)) return false;
+      if (yearEnd   && (!y || y > yearEnd))   return false;
+    }
+
+    // 关键词筛选（所有词都要匹配）
+    if (terms.length > 0) {
+      const haystack = (rec.title + ' ' + rec.snippet + ' ' + rec.source).toLowerCase();
+      if (!terms.every(t => haystack.includes(t.toLowerCase()))) return false;
+    }
+
+    return true;
+  });
+
+  currentPage = 1;
+  renderStats(allRecords.length, filteredRecords.length);
+  renderPage();
+}
+
+// ── 高亮 ──────────────────────────────────────────────────────────
+function highlight(text, terms) {
+  if (!terms || terms.length === 0) return escapeHtml(text);
+  let result = escapeHtml(text);
+  terms.forEach(t => {
+    const rx = new RegExp(escapeRegex(escapeHtml(t)), 'gi');
+    result = result.replace(rx, m => `<mark class="highlight">${m}</mark>`);
+  });
+  return result;
+}
+
+function escapeHtml(s) {
+  return String(s)
+    .replace(/&/g, '&amp;')
+    .replace(/</g, '&lt;')
+    .replace(/>/g, '&gt;')
+    .replace(/"/g, '&quot;');
+}
+
+// ── 渲染 ──────────────────────────────────────────────────────────
+function renderStats(total, found) {
+  const el = document.getElementById('stats');
+  if (found === 0 && !document.getElementById('query').value.trim()) {
+    el.textContent = `数据库共 ${total.toLocaleString()} 条记录`;
+  } else {
+    el.textContent = `数据库共 ${total.toLocaleString()} 条记录 · 符合条件：${found.toLocaleString()} 条`;
+  }
+}
+
+function renderEmpty(msg) {
+  document.getElementById('results').innerHTML =
+    `<div class="empty"><h2>${msg}</h2></div>`;
+}
+
+function renderPage() {
+  const terms = document.getElementById('query').value.trim().split(/\s+/).filter(Boolean);
+  const start = (currentPage - 1) * PAGE_SIZE;
+  const pageItems = filteredRecords.slice(start, start + PAGE_SIZE);
+
+  if (filteredRecords.length === 0) {
+    renderEmpty('未找到符合条件的记录');
+    return;
+  }
+
+  const totalPages = Math.ceil(filteredRecords.length / PAGE_SIZE);
+  let html = '';
+
+  pageItems.forEach(rec => {
+    html += `
+      <div class="result-card">
+        <div class="card-meta">
+          <span class="badge badge-${rec.category}">${rec.category}</span>
+          <span class="card-title">${highlight(rec.title || '（无标题）', terms)}</span>
+          ${rec.date ? `<span class="card-date">${escapeHtml(rec.date)}</span>` : ''}
+        </div>
+        <div class="card-source">${escapeHtml(rec.source)}</div>
+        <div class="card-snippet">${highlight(rec.snippet, terms)}</div>
+      </div>`;
+  });
+
+  // 分页
+  html += `<div class="pagination">`;
+  html += `<button onclick="goPage(${currentPage-1})" ${currentPage===1?'disabled':''}>‹ 上一页</button>`;
+
+  const range = pageRange(currentPage, totalPages);
+  range.forEach(p => {
+    if (p === '…') {
+      html += `<button disabled>…</button>`;
+    } else {
+      html += `<button class="${p===currentPage?'active':''}" onclick="goPage(${p})">${p}</button>`;
+    }
+  });
+
+  html += `<button onclick="goPage(${currentPage+1})" ${currentPage===totalPages?'disabled':''}>下一页 ›</button>`;
+  html += `</div>`;
+
+  document.getElementById('results').innerHTML = html;
+  window.scrollTo({ top: document.querySelector('.stats').offsetTop - 80, behavior: 'smooth' });
+}
+
+function pageRange(cur, total) {
+  if (total <= 7) return Array.from({length: total}, (_, i) => i+1);
+  const pages = [];
+  if (cur > 3) { pages.push(1); if (cur > 4) pages.push('…'); }
+  for (let i = Math.max(1, cur-2); i <= Math.min(total, cur+2); i++) pages.push(i);
+  if (cur < total - 2) { if (cur < total - 3) pages.push('…'); pages.push(total); }
+  return pages;
+}
+
+function goPage(p) {
+  currentPage = p;
+  renderPage();
+}
+
+// ── 事件绑定 ──────────────────────────────────────────────────────
+let debounceTimer;
+function debounced() {
+  clearTimeout(debounceTimer);
+  debounceTimer = setTimeout(doSearch, DEBOUNCE_MS);
+}
+
+document.getElementById('query').addEventListener('input', debounced);
+document.getElementById('categoryFilter').addEventListener('change', doSearch);
+document.getElementById('yearStart').addEventListener('input', debounced);
+document.getElementById('yearEnd').addEventListener('input', debounced);
+</script>
+</body>
+</html>

@@ -1,0 +1,665 @@
+[
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "国家话语数据集使用手册",
+    "section": "",
+    "text": "这本手册是什么？\n这是「国家话语数据集」（State Discourse Dataset）的完整使用手册。\n这份数据集收录了从 1950 年代至 2026 年的中国官方政治话语文本，共约 311 个文件、47.5 MB，涵盖领导人著作、党代会文件、两会报告、政府白皮书等九大类别。\n这本手册专门写给没有数据分析基础的研究者。 你不需要会编程，不需要懂统计，只需要一个大模型（如 ChatGPT、Claude、DeepSeek）和一个研究问题，就能开始分析。",
+    "crumbs": [
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>欢迎 | Welcome</span>"
+    ]
+  },
+  {
+    "objectID": "index.html#what-can-you-do",
+    "href": "index.html#what-can-you-do",
+    "title": "国家话语数据集使用手册",
+    "section": "你能用这份数据做什么？",
+    "text": "你能用这份数据做什么？\n\n\n\n\n\n\n示例研究问题\n\n\n\n\n「共同富裕」这个词是从什么时候开始频繁出现在官方话语中的？\n毛泽东和习近平在谈论「人民」时，语境和含义有什么不同？\n历年政府工作报告中，经济目标的表述方式如何变化？\n中国政府在白皮书中如何建构「人权」话语？\n反腐话语在十八大前后发生了什么变化？",
+    "crumbs": [
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>欢迎 | Welcome</span>"
+    ]
+  },
+  {
+    "objectID": "index.html#how-to-use",
+    "href": "index.html#how-to-use",
+    "title": "国家话语数据集使用手册",
+    "section": "如何使用这本手册？",
+    "text": "如何使用这本手册？\n这份数据集提供三种使用方式，你可以根据自己的需求选择：\n\n方式一：技能提示词（最推荐）\n把「技能提示词」（Skill Prompt）复制粘贴给任何大模型，让大模型引导你完成研究。完全不需要编程。\n→ 从 技能提示词指南 开始\n\n\n方式二：语料搜索系统\n在网页上直接检索全部语料，按关键词、类别、时间筛选，浏览相关文本片段。\n→ 查看 搜索系统使用说明\n\n\n方式三：Python 数据加载（有基础编程经验）\n如果你有 Python 环境，可以用提供的脚本加载和筛选数据，进行自定义分析。\n→ 查看 数据加载脚本说明",
+    "crumbs": [
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>欢迎 | Welcome</span>"
+    ]
+  },
+  {
+    "objectID": "index.html#whats-in-it",
+    "href": "index.html#whats-in-it",
+    "title": "国家话语数据集使用手册",
+    "section": "数据集有哪些内容？",
+    "text": "数据集有哪些内容？\n详细说明见 数据集概览，以下是简要总览：\n\n\n\n类别\n规模\n时间范围\n\n\n\n\n习近平重要讲话数据库\n48,610 条\n当代\n\n\n人民网政绩观文章\n194 条\n2025-2026\n\n\n领导人著作选集\n32 个文件\n1950s-2010s\n\n\n全国党代会文件\n39 个文件\n2002-2021\n\n\n两会文件\n130 个文件\n1998-2023\n\n\n政府白皮书\n89 个文件\n2010-2021\n\n\n党规党史、五年规划\n14 个文件\n多时期\n\n\n意识形态文件\n3 个文件\n2020s\n\n\n《求是》杂志\n42 个文件\n多期",
+    "crumbs": [
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>欢迎 | Welcome</span>"
+    ]
+  },
+  {
+    "objectID": "index.html#quick-start",
+    "href": "index.html#quick-start",
+    "title": "国家话语数据集使用手册",
+    "section": "五分钟快速上手",
+    "text": "五分钟快速上手\n\n先读概览：浏览 数据集概览，看看哪类数据和你的研究方向相关\n选一个技能：去 技能提示词指南 选一个合适的技能文件\n打开大模型：Claude、ChatGPT、DeepSeek 等都可以\n粘贴技能，开始对话：大模型会引导你一步步完成分析\n\n就这么简单。",
+    "crumbs": [
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>欢迎 | Welcome</span>"
+    ]
+  },
+  {
+    "objectID": "overview.html",
+    "href": "overview.html",
+    "title": "数据集概览",
+    "section": "",
+    "text": "总体规模",
+    "crumbs": [
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>数据集概览</span>"
+    ]
+  },
+  {
+    "objectID": "overview.html#overview-stats",
+    "href": "overview.html#overview-stats",
+    "title": "数据集概览",
+    "section": "",
+    "text": "指标\n数值\n\n\n\n\n总文件数\n311 个（308 个 Excel + 2 个 CSV）\n\n\n总体量\n约 47.5 MB\n\n\n时间跨度\n1950 年代 — 2026 年\n\n\n语言\n中文",
+    "crumbs": [
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>数据集概览</span>"
+    ]
+  },
+  {
+    "objectID": "overview.html#xi-speeches",
+    "href": "overview.html#xi-speeches",
+    "title": "数据集概览",
+    "section": "类别一：习近平系列重要讲话数据库",
+    "text": "类别一：习近平系列重要讲话数据库\n文件：习近平系列重要讲话数据库.csv 规模：48,610 条记录\n这是数据集中规模最大、结构最规整的数据，以 CSV 格式存储，每行对应一篇讲话或文章。\n\n\n\n字段名\n说明\n\n\n\n\n标题\n讲话或文章的标题\n\n\n中文\n正文全文\n\n\n发布时间\n发布日期\n\n\n字段\n主题领域分类（如：经济、外交、党建）\n\n\n标题链接\n原文网址\n\n\n\n适合研究：习近平执政话语特征、特定议题（经济/外交/反腐/生态）关键词频次、话语风格演变",
+    "crumbs": [
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>数据集概览</span>"
+    ]
+  },
+  {
+    "objectID": "overview.html#rmrb",
+    "href": "overview.html#rmrb",
+    "title": "数据集概览",
+    "section": "类别二：人民网政绩观专题文章",
+    "text": "类别二：人民网政绩观专题文章\n文件：人民网_政绩观.csv 规模：194 条记录（2025-2026 年）\n《人民日报》专题报道，聚焦「正确政绩观」这一近期核心话语。\n\n\n\n字段名\n说明\n\n\n\n\ntitle\n文章标题\n\n\nfull_text\n正文全文\n\n\ndate\n发布日期\n\n\nsource\n来源（人民日报等）\n\n\nsnippet\n摘要\n\n\nurl\n原文链接\n\n\n\n适合研究：当代党政绩效评价话语、反腐廉政叙事、地方治理话语",
+    "crumbs": [
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>数据集概览</span>"
+    ]
+  },
+  {
+    "objectID": "overview.html#leaders",
+    "href": "overview.html#leaders",
+    "title": "数据集概览",
+    "section": "类别三：领导人著作选集",
+    "text": "类别三：领导人著作选集\n文件：32 个 Excel 文件，共 25+ 卷\n跨越七十余年的领导人著作，是做跨时期话语比较的核心数据来源。\n\n\n\n\n\n\n\n\n领导人\n文本\n大致时代\n\n\n\n\n毛泽东\n毛泽东选集（第 1-5 卷）\n1920s-1970s\n\n\n刘少奇\n刘少奇选集（上下册）\n1940s-1960s\n\n\n周恩来\n周恩来选集（上下册）\n1940s-1970s\n\n\n朱德\n朱德选集\n1920s-1970s\n\n\n陈云\n陈云文选（第 1-3 卷）\n1950s-1980s\n\n\n邓小平\n邓小平文选（第 1-3 卷）\n1950s-1990s\n\n\n江泽民\n江泽民文选（第 1-3 卷）\n1989-2002\n\n\n习近平\n习近平谈治国理政（第 1-3 卷）\n2012-\n\n\n习近平\n习近平论述摘编（深化改革 / 中国梦 / 新冠与经济 / 法治 / 反腐 / 人权）\n2012-\n\n\n\n通用字段：中文（正文全文）、书名（来源卷册）\n适合研究：跨领导人话语比较、意识形态演变谱系、特定概念（改革/法治/民主/人权）的话语建构",
+    "crumbs": [
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>数据集概览</span>"
+    ]
+  },
+  {
+    "objectID": "overview.html#congress",
+    "href": "overview.html#congress",
+    "title": "数据集概览",
+    "section": "类别四：全国党代会文件",
+    "text": "类别四：全国党代会文件\n文件：39 个 Excel 文件\n\n\n\n会议\n时间\n主要文件类型\n\n\n\n\n十六大\n2002\n政治报告、纪检报告、党章修正案\n\n\n十七大\n2007\n政治报告、纪检报告、党章修正案\n\n\n十八大\n2012\n政治报告\n\n\n十九大\n2017\n政治报告、纪检报告、党章修正案\n\n\n十八届各全会\n2014-2016\n公报、决定、准则\n\n\n十九届各全会\n2020-2021\n公报、决议\n\n\n\n通用字段：中文（全文）、文件名称（文件类型）\n适合研究：路线方针五年演变、党建话语制度化、重大政治转向的话语分析",
+    "crumbs": [
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>数据集概览</span>"
+    ]
+  },
+  {
+    "objectID": "overview.html#npc",
+    "href": "overview.html#npc",
+    "title": "数据集概览",
+    "section": "类别五：全国两会文件",
+    "text": "类别五：全国两会文件\n文件：130 个 Excel 文件（1998-2023，连续 26 年）\n这是整个数据集中时间序列最完整的部分，每年五份核心文件：\n\n政府工作报告\n国民经济和社会发展计划报告\n中央财政预算报告\n全国人大常委会工作报告\n全国政协工作报告\n\n通用字段：中文（全文）、文件名称（文件类型）、发表时间（年份）\n适合研究：政策话语年度演变、经济目标表述变化、话语风格历时分析",
+    "crumbs": [
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>数据集概览</span>"
+    ]
+  },
+  {
+    "objectID": "overview.html#whitepaper",
+    "href": "overview.html#whitepaper",
+    "title": "数据集概览",
+    "section": "类别六：政府白皮书",
+    "text": "类别六：政府白皮书\n文件：89 个 Excel 文件（2010-2021）\n国务院新闻办公室发布的权威官方政策阐释文件，议题广泛：\n反腐廉政、对外贸易、人力资源、法律体系、农村扶贫、 国防（2010/2012/2014）、气候变化、航天、西藏、 医疗卫生、司法改革、钓鱼岛主权、稀土、能源等\n适合研究：官方叙事框架分析、敏感议题的话语建构、对外宣传话语策略",
+    "crumbs": [
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>数据集概览</span>"
+    ]
+  },
+  {
+    "objectID": "overview.html#party-rules",
+    "href": "overview.html#party-rules",
+    "title": "数据集概览",
+    "section": "类别七：党规党史与五年规划",
+    "text": "类别七：党规党史与五年规划\n文件：14 个 Excel 文件\n党规（7 份）：党章、党内政治生活准则、廉洁自律准则、纪检工作规则、问责条例、党内监督条例、纪律处分条例\n党史（5 份）：中国共产党历史（第 1-2 卷）、党史七十年、中国共产党简史、抗日战争史简明读本\n五年规划（2 份）：十三五（2016-2020）、十四五（2021-2025 附 2035 远景目标）\n适合研究：制度性话语分析、纪律话语演变、党的历史叙事建构、中长期目标话语",
+    "crumbs": [
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>数据集概览</span>"
+    ]
+  },
+  {
+    "objectID": "overview.html#ideology",
+    "href": "overview.html#ideology",
+    "title": "数据集概览",
+    "section": "类别八：意识形态与发展理念文件",
+    "text": "类别八：意识形态与发展理念文件\n文件：3 个 Excel 文件\n\n科学发展观关键语句（胡锦涛时代核心话语精炼版）\n中共中央关于完整准确全面贯彻新发展理念做好碳达峰碳中和工作的意见\n2030 年前碳达峰行动方案\n\n适合研究：发展理念话语演变、生态文明话语的意识形态建构、政策目标的话语呈现",
+    "crumbs": [
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>数据集概览</span>"
+    ]
+  },
+  {
+    "objectID": "overview.html#qiushi",
+    "href": "overview.html#qiushi",
+    "title": "数据集概览",
+    "section": "类别九：《求是》杂志",
+    "text": "类别九：《求是》杂志\n文件：42 个 Excel 文件（多期）\n《求是》是中共中央主办的旗舰理论刊物，专门负责对党的路线方针进行理论阐释和意识形态宣传。\n通用字段：中文（正文）、文件名称（期号）\n适合研究：官方理论话语体系、意识形态宣传机制、政治话语的学术化过程",
+    "crumbs": [
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>数据集概览</span>"
+    ]
+  },
+  {
+    "objectID": "overview.html#choose-data",
+    "href": "overview.html#choose-data",
+    "title": "数据集概览",
+    "section": "如何选择适合自己研究问题的数据？",
+    "text": "如何选择适合自己研究问题的数据？\n\n\n\n研究问题类型\n推荐数据类别\n\n\n\n\n追踪某个词/概念随时间的变化\n两会文件（1998-2023）、习近平讲话数据库\n\n\n比较不同领导人的话语风格\n领导人著作选集\n\n\n分析党的路线方针演变\n党代会文件、党规党史\n\n\n研究某个政策议题的官方叙事\n政府白皮书、习近平讲话数据库\n\n\n研究意识形态与理论话语\n《求是》杂志、意识形态文件、领导人著作\n\n\n当代治理与反腐话语\n人民网政绩观、习近平讲话数据库、党规\n\n\n\n\n\n\n\n\n\n\n下一步\n\n\n\n了解完数据内容后，推荐进入 技能提示词指南，学习如何让大模型帮你分析这些数据。",
+    "crumbs": [
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>数据集概览</span>"
+    ]
+  },
+  {
+    "objectID": "skills-intro.html",
+    "href": "skills-intro.html",
+    "title": "技能提示词：是什么，怎么用",
+    "section": "",
+    "text": "技能提示词是什么？\n「技能提示词」（Skill Prompt）是一段预先写好的指令文字。当你把它粘贴给大模型时，大模型就会变成一位了解这份数据集全部内容、能主动引导你做研究的助手。\n你不需要向大模型解释数据集有什么——这些信息已经写在技能里了。你只需要告诉它你想研究什么。",
+    "crumbs": [
+      "技能提示词指南",
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>技能提示词：是什么，怎么用</span>"
+    ]
+  },
+  {
+    "objectID": "skills-intro.html#why-skills",
+    "href": "skills-intro.html#why-skills",
+    "title": "技能提示词：是什么，怎么用",
+    "section": "为什么需要技能提示词？",
+    "text": "为什么需要技能提示词？\n直接问大模型「帮我分析习近平讲话」，它不知道你的数据是什么格式、有哪些字段、覆盖什么时间范围。\n使用技能提示词后，大模型会：\n\n主动引导你：询问你的研究问题、时间范围和兴趣方向\n推荐合适的数据：告诉你应该用哪个文件的哪些字段\n选择分析方式：对话分析（直接讨论）或代码生成（输出可运行的Python/R代码）\n输出学术成果：分析结论、原文引用、可用于论文的段落",
+    "crumbs": [
+      "技能提示词指南",
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>技能提示词：是什么，怎么用</span>"
+    ]
+  },
+  {
+    "objectID": "skills-intro.html#which-skill",
+    "href": "skills-intro.html#which-skill",
+    "title": "技能提示词：是什么，怎么用",
+    "section": "共有几个技能，分别适合什么？",
+    "text": "共有几个技能，分别适合什么？\n本数据集提供四个技能，分别针对不同研究场景：\n\n\n\n技能文件\n适合场景\n推荐指数\n\n\n\n\nskill_general.md\n通用入口，不知道从哪里开始时先用这个\n⭐⭐⭐⭐⭐ 首选\n\n\nskill_policy.md\n研究某个政策话题随时间的演变\n⭐⭐⭐⭐\n\n\nskill_ideology.md\n比较不同领导人话语，或研究意识形态演变\n⭐⭐⭐⭐\n\n\nskill_codewriter.md\n有Python环境，想自己跑数据生成图表\n⭐⭐⭐",
+    "crumbs": [
+      "技能提示词指南",
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>技能提示词：是什么，怎么用</span>"
+    ]
+  },
+  {
+    "objectID": "skills-intro.html#how-to-use",
+    "href": "skills-intro.html#how-to-use",
+    "title": "技能提示词：是什么，怎么用",
+    "section": "通用使用步骤",
+    "text": "通用使用步骤\n所有技能的使用方式完全一样，只是内容不同：\n\n\n\n\n\n\n四步上手\n\n\n\n第一步：打开技能文件\n在 skills/ 目录下找到对应的 .md 文件，全选所有内容并复制。\n第二步：打开大模型对话\n打开 Claude / ChatGPT / DeepSeek / Gemini 等任意大模型，新建一个对话。\n第三步：粘贴技能，发送\n把复制的内容粘贴到输入框里，直接发送。大模型会确认它已了解数据集，并询问你的研究问题。\n第四步：告诉它你想研究什么\n用自己的话描述研究问题，例如：\n\n“我想看看’共同富裕’这个词是从什么时候开始出现的”\n“我要比较毛泽东和习近平谈’人民’的方式有什么不同”\n“帮我分析历年政府工作报告中关于经济增长目标的表述”\n\n大模型会接着引导你完成分析。",
+    "crumbs": [
+      "技能提示词指南",
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>技能提示词：是什么，怎么用</span>"
+    ]
+  },
+  {
+    "objectID": "skills-intro.html#two-modes",
+    "href": "skills-intro.html#two-modes",
+    "title": "技能提示词：是什么，怎么用",
+    "section": "技能支持哪两种工作模式？",
+    "text": "技能支持哪两种工作模式？\n每个技能都支持两种模式，在对话中你可以告诉大模型你想用哪种：\n\n模式一：对话分析（无需编程）\n你把相关文本片段直接粘贴给大模型，它帮你： - 识别关键词和话语框架 - 进行跨文本比较分析 - 提取核心论点和修辞策略 - 生成可用于论文写作的学术段落\n适合：没有编程经验的研究者，或者只需要分析少量文本的情况\n\n\n模式二：代码生成（需要 Python 环境）\n大模型根据你的研究问题，生成完整的 Python 分析代码，你直接复制运行即可得到结果（图表、统计数据等）。\n如需调用大模型 API 进行批量文本分析，大模型会提示你输入 API Key（支持 OpenAI / Anthropic Claude 等）。\n适合：需要处理大量文本，或需要生成可视化图表的研究者\n\n\n\n\n\n\n\n接下来\n\n\n\n选择你感兴趣的技能，查看详细使用说明：\n\n通用技能（skill_general） — 推荐新手从这里开始\n政策话语演变（skill_policy）\n意识形态比较（skill_ideology）\n代码生成（skill_codewriter）",
+    "crumbs": [
+      "技能提示词指南",
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>技能提示词：是什么，怎么用</span>"
+    ]
+  },
+  {
+    "objectID": "skills-general.html",
+    "href": "skills-general.html",
+    "title": "通用技能：skill_general",
+    "section": "",
+    "text": "这个技能能做什么？\nskill_general.md 是一个通用入口技能。它把大模型变成一位全能的研究助手，能够：",
+    "crumbs": [
+      "技能提示词指南",
+      "<span class='chapter-number'>4</span>  <span class='chapter-title'>通用技能：skill_general</span>"
+    ]
+  },
+  {
+    "objectID": "skills-general.html#what-it-does",
+    "href": "skills-general.html#what-it-does",
+    "title": "通用技能：skill_general",
+    "section": "",
+    "text": "帮你从模糊的研究兴趣出发，逐步明确研究问题\n根据你的问题推荐最合适的数据类别（从九类数据中选）\n引导你选择对话分析或代码生成模式\n输出学术分析结论，包括原文引用和可用于论文的段落",
+    "crumbs": [
+      "技能提示词指南",
+      "<span class='chapter-number'>4</span>  <span class='chapter-title'>通用技能：skill_general</span>"
+    ]
+  },
+  {
+    "objectID": "skills-general.html#file-location",
+    "href": "skills-general.html#file-location",
+    "title": "通用技能：skill_general",
+    "section": "技能文件位置",
+    "text": "技能文件位置\nskills/skill_general.md",
+    "crumbs": [
+      "技能提示词指南",
+      "<span class='chapter-number'>4</span>  <span class='chapter-title'>通用技能：skill_general</span>"
+    ]
+  },
+  {
+    "objectID": "skills-general.html#demo",
+    "href": "skills-general.html#demo",
+    "title": "通用技能：skill_general",
+    "section": "使用演示",
+    "text": "使用演示\n以下是一次完整对话示例，展示技能如何引导用户：\n\n用户（粘贴完技能后）： &gt; 我想研究一下”共同富裕”这个话语\n大模型（使用技能后）： &gt; 很好的研究方向！“共同富裕”是近年来中国政治话语中一个重要的概念转变。 &gt; &gt; 在我们开始之前，我想了解一下： &gt; 1. 你主要想看它在什么时间段内的变化？（比如：2000年至今？还是专门看2021年以后？） &gt; 2. 你更关注哪类文献？官方讲话、两会报告，还是理论刊物？ &gt; 3. 你是想直接讨论分析，还是想要一段可以运行的代码来做词频统计？\n\n用户： &gt; 想看2012年以来，重点是两会报告和习近平讲话。我不会编程，直接讨论就行。\n大模型： &gt; 明白了。我来帮你规划一下分析思路： &gt; &gt; 推荐数据来源： &gt; - 两会/目录下的政府工作报告（2012-2023），这是表述「共同富裕」政策目标的核心文件 &gt; - 习近平系列重要讲话数据库.csv，覆盖习近平历年重要讲话，可追踪该词的使用频率和语境 &gt; &gt; 分析方案：你可以逐年把政府工作报告的相关段落复制给我，我来帮你识别「共同富裕」出现的上下文、判断话语框架的变化，最后写出一段可以用于论文的分析…",
+    "crumbs": [
+      "技能提示词指南",
+      "<span class='chapter-number'>4</span>  <span class='chapter-title'>通用技能：skill_general</span>"
+    ]
+  },
+  {
+    "objectID": "skills-general.html#how-to-provide-data",
+    "href": "skills-general.html#how-to-provide-data",
+    "title": "通用技能：skill_general",
+    "section": "对话分析模式下，如何提供数据？",
+    "text": "对话分析模式下，如何提供数据？\n大模型会告诉你需要哪类数据，你只需要：\n\n在电脑上找到对应的 Excel 或 CSV 文件\n用 Excel/WPS 打开，复制相关文本段落\n粘贴给大模型\n\n\n\n\n\n\n\n提示：一次粘贴多少文字合适？\n\n\n\n大多数大模型单次可以处理 5,000-10,000 个中文字（约 3-5 篇政府工作报告的段落）。\n如果你的数据量较大，可以分批进行： - 先分析 2012-2015 年 - 再分析 2016-2020 年 - 最后让大模型综合比较",
+    "crumbs": [
+      "技能提示词指南",
+      "<span class='chapter-number'>4</span>  <span class='chapter-title'>通用技能：skill_general</span>"
+    ]
+  },
+  {
+    "objectID": "skills-general.html#output-example",
+    "href": "skills-general.html#output-example",
+    "title": "通用技能：skill_general",
+    "section": "输出示例",
+    "text": "输出示例\n完成分析后，大模型会输出类似以下格式：\n【分析报告】\n\n研究问题：2012年以来\"共同富裕\"话语在两会文件和习近平讲话中的演变\n\n一、主要发现\n• \"共同富裕\"在2012-2020年间偶尔出现，通常作为长期目标被提及\n• 2021年8月习近平在中央财经委会议讲话后，该词频次显著上升\n• 在两会文件中，2022年政府工作报告首次将其列为年度重点任务之一\n\n二、原文证据\n• [2021年政府工作报告]：\"扎实推动共同富裕\"\n• [习近平讲话，2021]：\"共同富裕是社会主义的本质要求...\"\n\n三、话语框架分析\n从\"愿景式\"表述（长期目标）到\"任务式\"表述（年度任务），反映了该话语的\n政策优先级显著提升...\n\n四、延伸研究建议\n可以进一步比较同期党代会文件和白皮书中相关表述，追踪该话语的制度化过程。\n\n\n\n\n\n\n\n相关技能\n\n\n\n如果你的研究方向更具体，可以考虑使用专题技能：\n\n政策话语演变（skill_policy）：专注于时间序列分析\n意识形态比较（skill_ideology）：专注于跨领导人比较",
+    "crumbs": [
+      "技能提示词指南",
+      "<span class='chapter-number'>4</span>  <span class='chapter-title'>通用技能：skill_general</span>"
+    ]
+  },
+  {
+    "objectID": "skills-policy.html",
+    "href": "skills-policy.html",
+    "title": "政策话语演变：skill_policy",
+    "section": "",
+    "text": "这个技能能做什么？\nskill_policy.md 专为政策话语的时间序列演变设计。它特别适合：",
+    "crumbs": [
+      "技能提示词指南",
+      "<span class='chapter-number'>5</span>  <span class='chapter-title'>政策话语演变：skill_policy</span>"
+    ]
+  },
+  {
+    "objectID": "skills-policy.html#what-it-does",
+    "href": "skills-policy.html#what-it-does",
+    "title": "政策话语演变：skill_policy",
+    "section": "",
+    "text": "追踪某个关键词/政策概念的出现频率随年份的变化\n比较不同时期（如胡锦涛时代 vs 习近平时代）对同一议题的表述方式\n分析政策话语从倡议到制度化的演变轨迹\n识别话语框架的转变节点（什么时候开始说法变了？）",
+    "crumbs": [
+      "技能提示词指南",
+      "<span class='chapter-number'>5</span>  <span class='chapter-title'>政策话语演变：skill_policy</span>"
+    ]
+  },
+  {
+    "objectID": "skills-policy.html#file-location",
+    "href": "skills-policy.html#file-location",
+    "title": "政策话语演变：skill_policy",
+    "section": "技能文件位置",
+    "text": "技能文件位置\nskills/skill_policy.md",
+    "crumbs": [
+      "技能提示词指南",
+      "<span class='chapter-number'>5</span>  <span class='chapter-title'>政策话语演变：skill_policy</span>"
+    ]
+  },
+  {
+    "objectID": "skills-policy.html#best-data",
+    "href": "skills-policy.html#best-data",
+    "title": "政策话语演变：skill_policy",
+    "section": "最适合配合使用的数据",
+    "text": "最适合配合使用的数据\n\n\n\n\n\n\n\n数据类别\n原因\n\n\n\n\n两会文件（1998-2023）\n时间序列最完整，26年连续数据，每年5份核心文件\n\n\n习近平讲话数据库\n议题分类详细，覆盖执政以来全部重要讲话\n\n\n政府白皮书\n特定议题的权威官方叙事，适合深度文本分析\n\n\n党代会文件\n五年一次的重大路线表述，关键时间截面",
+    "crumbs": [
+      "技能提示词指南",
+      "<span class='chapter-number'>5</span>  <span class='chapter-title'>政策话语演变：skill_policy</span>"
+    ]
+  },
+  {
+    "objectID": "skills-policy.html#workflow",
+    "href": "skills-policy.html#workflow",
+    "title": "政策话语演变：skill_policy",
+    "section": "技能引导流程",
+    "text": "技能引导流程\n粘贴技能后，大模型会按以下步骤引导你：\n步骤一：确定政策议题\n大模型会建议一些常见方向，或你直接告诉它，例如：\n\n\n\n\n\n\n常见研究方向示例\n\n\n\n\n「共同富裕」从愿景到政策任务的话语演变\n「生态文明」在两会报告中的话语扩展过程\n反腐话语在十八大前后的框架转变\n「一带一路」从倡议到制度化的话语建构\n经济增长目标的表述从「保X%」到「在合理区间」的变化\n「数字经济」「新质生产力」等新词的话语崛起轨迹\n\n\n\n步骤二：确定时间范围\n\n是否跨越不同领导人执政时期？\n是否聚焦某个特定事件前后（如2012年十八大、2020年新冠疫情）？\n\n步骤三：选择分析维度\n\n关键词频率：某词出现多少次？\n话语框架：同一议题的归因方式、目标表述是否改变？\n政策承诺：历年说了什么，后来是否出现了变化？\n\n步骤四：数据与分析\n\n对话模式：你粘贴文本，大模型逐年分析并综合\n代码模式：大模型生成自动统计代码，输出词频折线图",
+    "crumbs": [
+      "技能提示词指南",
+      "<span class='chapter-number'>5</span>  <span class='chapter-title'>政策话语演变：skill_policy</span>"
+    ]
+  },
+  {
+    "objectID": "skills-policy.html#examples",
+    "href": "skills-policy.html#examples",
+    "title": "政策话语演变：skill_policy",
+    "section": "典型研究问题",
+    "text": "典型研究问题\n以下问题可以直接使用本技能和配套数据完成研究：\n\n「共同富裕」在两会文件中从首次出现到成为核心议题经历了哪些阶段？\n历年政府工作报告的 GDP 增长目标表述如何从具体数字转变为区间目标？\n「生态文明」在党代会文件中的话语地位是如何逐步提升的？\n反腐话语中「老虎苍蝇一起打」等隐喻在不同时期的使用频率变化？\n中国「人权」白皮书在不同议题上的叙事框架经历了哪些调整？",
+    "crumbs": [
+      "技能提示词指南",
+      "<span class='chapter-number'>5</span>  <span class='chapter-title'>政策话语演变：skill_policy</span>"
+    ]
+  },
+  {
+    "objectID": "skills-policy.html#output",
+    "href": "skills-policy.html#output",
+    "title": "政策话语演变：skill_policy",
+    "section": "输出格式",
+    "text": "输出格式\n本技能默认输出标准化的政策话语演变报告：\n【政策话语演变报告】\n\n议题：[具体政策话题]\n数据来源：[文件类型 + 时间范围]\n分析维度：[关键词频率 / 话语框架 / 政策承诺 等]\n\n一、话语演变时间线\n[按时间段描述话语变化的关键节点]\n\n二、原文证据\n• [年份/文件] \"具体引文...\"\n• [年份/文件] \"具体引文...\"\n\n三、框架分析\n[话语框架从X到Y的演变，体现了什么政策意涵]\n\n四、学术解读（可直接用于论文）\n[规范学术段落]",
+    "crumbs": [
+      "技能提示词指南",
+      "<span class='chapter-number'>5</span>  <span class='chapter-title'>政策话语演变：skill_policy</span>"
+    ]
+  },
+  {
+    "objectID": "skills-ideology.html",
+    "href": "skills-ideology.html",
+    "title": "意识形态比较：skill_ideology",
+    "section": "",
+    "text": "这个技能能做什么？\nskill_ideology.md 专为跨时期、跨主体的话语比较设计。它的强项是：",
+    "crumbs": [
+      "技能提示词指南",
+      "<span class='chapter-number'>6</span>  <span class='chapter-title'>意识形态比较：skill_ideology</span>"
+    ]
+  },
+  {
+    "objectID": "skills-ideology.html#what-it-does",
+    "href": "skills-ideology.html#what-it-does",
+    "title": "意识形态比较：skill_ideology",
+    "section": "",
+    "text": "比较不同领导人（毛泽东、邓小平、江泽民、习近平等）在同一概念上的话语差异\n识别某个政治概念的语义演变（同一词，不同时代的含义是否改变？）\n分析话语建构机制：官方如何通过话语定义「人民」「民主」「改革」等概念\n追踪意识形态话语的连续性与断裂",
+    "crumbs": [
+      "技能提示词指南",
+      "<span class='chapter-number'>6</span>  <span class='chapter-title'>意识形态比较：skill_ideology</span>"
+    ]
+  },
+  {
+    "objectID": "skills-ideology.html#file-location",
+    "href": "skills-ideology.html#file-location",
+    "title": "意识形态比较：skill_ideology",
+    "section": "技能文件位置",
+    "text": "技能文件位置\nskills/skill_ideology.md",
+    "crumbs": [
+      "技能提示词指南",
+      "<span class='chapter-number'>6</span>  <span class='chapter-title'>意识形态比较：skill_ideology</span>"
+    ]
+  },
+  {
+    "objectID": "skills-ideology.html#best-data",
+    "href": "skills-ideology.html#best-data",
+    "title": "意识形态比较：skill_ideology",
+    "section": "最适合配合使用的数据",
+    "text": "最适合配合使用的数据\n\n\n\n数据类别\n适合比较什么\n\n\n\n\n领导人著作选集\n跨领导人直接比较（毛/邓/江/习等，共32个文件）\n\n\n《求是》杂志\n党的官方理论话语的建构与演变\n\n\n意识形态文件\n科学发展观 vs 新发展理念等核心理论比较\n\n\n党代会文件\n每五年一次的意识形态正式表述节点",
+    "crumbs": [
+      "技能提示词指南",
+      "<span class='chapter-number'>6</span>  <span class='chapter-title'>意识形态比较：skill_ideology</span>"
+    ]
+  },
+  {
+    "objectID": "skills-ideology.html#workflow",
+    "href": "skills-ideology.html#workflow",
+    "title": "意识形态比较：skill_ideology",
+    "section": "技能引导流程",
+    "text": "技能引导流程\n步骤一：确定比较对象\n你至少需要选择两个比较维度，常见组合：\n\n\n\n\n\n\n比较对象示例\n\n\n\n跨领导人比较 - 毛泽东 vs 邓小平（革命话语 vs 改革话语） - 邓小平 vs 江泽民（改革开放话语的延续与发展） - 胡锦涛（科学发展观）vs 习近平（新时代话语） - 四代领导人对「改革」的整体谱系\n跨时期比较 - 十八大前（2012年以前）vs 十八大后 - 改革开放时期（1978-2012）vs 新时代（2012至今）\n\n\n步骤二：确定分析概念\n常见研究方向：\n\n「民主」：从人民民主专政，到社会主义民主，到全过程人民民主\n「改革」：改革开放的语义，到全面深化改革的话语转变\n「人民」：不同时期「人民」的指涉范围和政治功能\n「法治」：从法制（rule by law）到依法治国（rule of law 的中国建构）\n「腐败」：党建话语中腐败的归因方式和治理话语\n「国际秩序」：从和平共处五项原则到人类命运共同体\n\n步骤三：选择分析框架\n大模型会提供以下框架供选择，或组合使用：\n\n\n\n框架\n关注点\n\n\n\n\n关键词/概念谱系\n核心词的使用频率与搭配词变化\n\n\n话语建构分析\n如何定义「我们」，如何归因，如何合法化\n\n\n隐喻与修辞分析\n战争隐喻、家庭隐喻、自然隐喻的使用\n\n\n话语连续性与断裂\n哪些要素延续，哪些发生了转变",
+    "crumbs": [
+      "技能提示词指南",
+      "<span class='chapter-number'>6</span>  <span class='chapter-title'>意识形态比较：skill_ideology</span>"
+    ]
+  },
+  {
+    "objectID": "skills-ideology.html#examples",
+    "href": "skills-ideology.html#examples",
+    "title": "意识形态比较：skill_ideology",
+    "section": "典型研究问题",
+    "text": "典型研究问题\n\n「人民」概念在毛泽东到习近平文本中的语义演变：从阶级范畴到政治共同体\n「改革」话语的断裂与延续：邓小平「摸石头过河」与习近平「顶层设计」的话语对比\n中国「民主」话语的本土化建构：与西方自由民主话语的区隔策略\n「法治」话语从工具性到价值性的演变：党代会文件与领导人著作的跨文本分析\n「腐败」话语的建构：从「阶级敌人」到「老虎苍蝇」的话语转型机制",
+    "crumbs": [
+      "技能提示词指南",
+      "<span class='chapter-number'>6</span>  <span class='chapter-title'>意识形态比较：skill_ideology</span>"
+    ]
+  },
+  {
+    "objectID": "skills-ideology.html#output",
+    "href": "skills-ideology.html#output",
+    "title": "意识形态比较：skill_ideology",
+    "section": "输出格式",
+    "text": "输出格式\n【话语比较分析报告】\n\n比较对象：[领导人A/时期A] vs [领导人B/时期B]\n分析概念：[核心概念]\n分析框架：[使用的框架]\n\n一、话语特征对比\n\n| 维度         | [文本A]         | [文本B]         |\n|-------------|----------------|----------------|\n| 核心概念定义 |                |                |\n| 论证方式     |                |                |\n| 关键隐喻     |                |                |\n| 主体建构     |                |                |\n\n二、原文证据\n• [来源A] \"引文...\"\n• [来源B] \"引文...\"\n\n三、意识形态演变解读\n[学术分析段落，讨论连续性、断裂与转型机制]\n\n四、理论对话建议\n[可以与哪些学术文献对话]",
+    "crumbs": [
+      "技能提示词指南",
+      "<span class='chapter-number'>6</span>  <span class='chapter-title'>意识形态比较：skill_ideology</span>"
+    ]
+  },
+  {
+    "objectID": "skills-codewriter.html",
+    "href": "skills-codewriter.html",
+    "title": "代码生成：skill_codewriter",
+    "section": "",
+    "text": "这个技能能做什么？\nskill_codewriter.md 专注于生成可直接运行的分析代码。它会：",
+    "crumbs": [
+      "技能提示词指南",
+      "<span class='chapter-number'>7</span>  <span class='chapter-title'>代码生成：skill_codewriter</span>"
+    ]
+  },
+  {
+    "objectID": "skills-codewriter.html#what-it-does",
+    "href": "skills-codewriter.html#what-it-does",
+    "title": "代码生成：skill_codewriter",
+    "section": "",
+    "text": "根据你的研究问题，输出完整的 Python 或 R 代码\n代码包含详细的中文注释，每步都说清楚在做什么\n第一行给出依赖安装命令（pip install ...）\n如需调用大模型 API 进行批量文本分析，会提示你输入 API Key",
+    "crumbs": [
+      "技能提示词指南",
+      "<span class='chapter-number'>7</span>  <span class='chapter-title'>代码生成：skill_codewriter</span>"
+    ]
+  },
+  {
+    "objectID": "skills-codewriter.html#file-location",
+    "href": "skills-codewriter.html#file-location",
+    "title": "代码生成：skill_codewriter",
+    "section": "技能文件位置",
+    "text": "技能文件位置\nskills/skill_codewriter.md",
+    "crumbs": [
+      "技能提示词指南",
+      "<span class='chapter-number'>7</span>  <span class='chapter-title'>代码生成：skill_codewriter</span>"
+    ]
+  },
+  {
+    "objectID": "skills-codewriter.html#prerequisites",
+    "href": "skills-codewriter.html#prerequisites",
+    "title": "代码生成：skill_codewriter",
+    "section": "我需要什么基础？",
+    "text": "我需要什么基础？\n\n\n\n\n\n\n使用前请确认\n\n\n\n\n已安装 Python（推荐通过 Anaconda 安装，包含所有常用库）\n能在终端/命令行运行 python 脚本名.py，或使用 Jupyter Notebook\n不需要会编程——代码会由大模型生成，你只需要运行\n\n如果没有 Python 环境，推荐先使用 通用技能（skill_general） 进行对话分析，不需要任何编程基础。",
+    "crumbs": [
+      "技能提示词指南",
+      "<span class='chapter-number'>7</span>  <span class='chapter-title'>代码生成：skill_codewriter</span>"
+    ]
+  },
+  {
+    "objectID": "skills-codewriter.html#code-types",
+    "href": "skills-codewriter.html#code-types",
+    "title": "代码生成：skill_codewriter",
+    "section": "可以生成哪类代码？",
+    "text": "可以生成哪类代码？\n大模型内置了以下分析模板，会根据你的研究问题选择和组合：\n\n\n\n分析类型\n输出内容\n\n\n\n\n关键词频率统计\n某词每年出现次数的表格和折线图\n\n\n多关键词对比\n多个词同图对比的折线图\n\n\n高频词排行\n分词后 Top N 关键词的条形图\n\n\n数据加载与筛选\n按类别、年份、关键词筛选数据\n\n\n大模型 API 分析\n调用 GPT/Claude 对文本批量分析",
+    "crumbs": [
+      "技能提示词指南",
+      "<span class='chapter-number'>7</span>  <span class='chapter-title'>代码生成：skill_codewriter</span>"
+    ]
+  },
+  {
+    "objectID": "skills-codewriter.html#demo",
+    "href": "skills-codewriter.html#demo",
+    "title": "代码生成：skill_codewriter",
+    "section": "使用演示",
+    "text": "使用演示\n用户（粘贴技能后）： &gt; 我想看1998到2023年，政府工作报告里”改革”这个词每年出现多少次，做成折线图。\n大模型（使用技能后）：\n\n好的，我来为你生成词频趋势分析代码。\n首先确认一下：你是否已经有 Python 环境？数据集放在哪个目录下？\n\n用户： &gt; 有Anaconda，数据集放在桌面的 StateDiscourseDataset 文件夹里。\n大模型： &gt; 好的，以下是完整代码：\n# 安装依赖（在终端运行一次）\n# pip install pandas openpyxl matplotlib\n\nimport pandas as pd\nimport glob\nimport re\nimport matplotlib.pyplot as plt\nimport matplotlib\nmatplotlib.rcParams['font.sans-serif'] = ['PingFang SC', 'SimHei', 'Arial Unicode MS']\nmatplotlib.rcParams['axes.unicode_minus'] = False\n\n# ── 1. 加载两会-政府工作报告 ──────────────────────\ndata_root = \"/Users/你的用户名/Desktop/StateDiscourseDataset\"  # 修改为实际路径\n\nall_files = glob.glob(f\"{data_root}/两会/**/*.xlsx\", recursive=True)\n# 只保留政府工作报告\ngov_files = [f for f in all_files if \"政府工作报告\" in f]\n\ndfs = []\nfor f in gov_files:\n    df = pd.read_excel(f, header=None, engine='openpyxl')\n    df.columns = ['中文', '文件名称'] + [f'c{i}' for i in range(len(df.columns)-2)]\n    # 从文件路径提取年份\n    year_match = re.search(r'(\\d{4})', f)\n    df['年份'] = int(year_match.group(1)) if year_match else None\n    dfs.append(df[['中文', '年份']])\n\ncorpus = pd.concat(dfs, ignore_index=True)\ncorpus = corpus.dropna(subset=['年份', '中文'])\n\n# ── 2. 统计关键词频次 ──────────────────────────────\nkeyword = \"改革\"\ncorpus['频次'] = corpus['中文'].astype(str).str.count(re.escape(keyword))\ntrend = corpus.groupby('年份')['频次'].sum().sort_index()\n\n# ── 3. 绘制折线图 ──────────────────────────────────\nplt.figure(figsize=(14, 5))\nplt.plot(trend.index, trend.values, marker='o', linewidth=2.5, color='#4361ee')\nplt.fill_between(trend.index, trend.values, alpha=0.1, color='#4361ee')\nplt.title(f'「{keyword}」在政府工作报告中的年度词频（1998-2023）', fontsize=14)\nplt.xlabel('年份')\nplt.ylabel('出现次数')\nplt.xticks(trend.index, rotation=45)\nplt.grid(True, alpha=0.3)\nplt.tight_layout()\nplt.savefig(f'词频趋势_{keyword}.png', dpi=150)\nplt.show()\n\nprint(trend)\n\n把上面的代码复制，粘贴到 Jupyter Notebook 或保存为 .py 文件运行。\n注意：第 10 行的路径改成你实际的数据集位置。",
+    "crumbs": [
+      "技能提示词指南",
+      "<span class='chapter-number'>7</span>  <span class='chapter-title'>代码生成：skill_codewriter</span>"
+    ]
+  },
+  {
+    "objectID": "skills-codewriter.html#llm-api",
+    "href": "skills-codewriter.html#llm-api",
+    "title": "代码生成：skill_codewriter",
+    "section": "调用大模型 API",
+    "text": "调用大模型 API\n如果你想对大量文本进行自动分析（如：让 GPT 批量总结每份白皮书的核心话语框架），大模型会生成调用 API 的代码，并提示你：\n\n\n\n\n\n\n需要准备 API Key\n\n\n\n大模型会询问你使用哪个平台：\n\nOpenAI（ChatGPT）：在 platform.openai.com 获取 Key，格式 sk-...\nAnthropic（Claude）：在 console.anthropic.com 获取 Key，格式 sk-ant-...\n其他兼容 OpenAI 接口的服务（DeepSeek、阿里云等）也可以使用\n\nAPI 调用会产生费用，分析前建议先用少量文本测试。",
+    "crumbs": [
+      "技能提示词指南",
+      "<span class='chapter-number'>7</span>  <span class='chapter-title'>代码生成：skill_codewriter</span>"
+    ]
+  },
+  {
+    "objectID": "skills-codewriter.html#with-load-script",
+    "href": "skills-codewriter.html#with-load-script",
+    "title": "代码生成：skill_codewriter",
+    "section": "配合数据加载脚本使用",
+    "text": "配合数据加载脚本使用\n数据集提供了 scripts/load_data.py，代码生成技能会配合它使用，让数据加载更方便。\n详见 数据加载脚本说明。",
+    "crumbs": [
+      "技能提示词指南",
+      "<span class='chapter-number'>7</span>  <span class='chapter-title'>代码生成：skill_codewriter</span>"
+    ]
+  },
+  {
+    "objectID": "search-guide.html",
+    "href": "search-guide.html",
+    "title": "语料搜索系统",
+    "section": "",
+    "text": "系统简介\n语料搜索系统是一个静态网页，让你在浏览器里直接搜索数据集中的全部文本内容，无需打开任何数据文件。\n主要功能：",
+    "crumbs": [
+      "<span class='chapter-number'>8</span>  <span class='chapter-title'>语料搜索系统</span>"
+    ]
+  },
+  {
+    "objectID": "search-guide.html#intro",
+    "href": "search-guide.html#intro",
+    "title": "语料搜索系统",
+    "section": "",
+    "text": "输入关键词，即时搜索全部 311 个文件的内容\n按数据类别筛选（两会/白皮书/领导人著作等）\n按发布时间范围筛选\n搜索结果显示文件名、日期和相关文本片段\n\n\n\n\n\n\n\n关于数据保护\n\n\n\n搜索系统只展示每条记录约 200 字的文本片段，不提供完整原文下载。这样既能帮助研究者定位相关资料，也保护了完整数据集的完整性。",
+    "crumbs": [
+      "<span class='chapter-number'>8</span>  <span class='chapter-title'>语料搜索系统</span>"
+    ]
+  },
+  {
+    "objectID": "search-guide.html#online",
+    "href": "search-guide.html#online",
+    "title": "语料搜索系统",
+    "section": "在线版（推荐）",
+    "text": "在线版（推荐）\n访问在线版无需任何安装：\n→ 打开搜索系统",
+    "crumbs": [
+      "<span class='chapter-number'>8</span>  <span class='chapter-title'>语料搜索系统</span>"
+    ]
+  },
+  {
+    "objectID": "search-guide.html#local",
+    "href": "search-guide.html#local",
+    "title": "语料搜索系统",
+    "section": "本地运行",
+    "text": "本地运行\n如果在线版暂时不可用，可以在本地运行：\n第一步：安装 Python 依赖\npip install pandas openpyxl\n第二步：生成搜索索引\n在终端中，进入数据集根目录，运行：\npython search/build_index.py\n这个脚本会读取全部数据文件，生成 search/search_index.json。根据电脑性能，大约需要 1-3 分钟。\n第三步：打开搜索界面\n用任意浏览器打开 search/index.html 文件即可。\n\n\n\n\n\n\n提示\n\n\n\n双击 search/index.html 有时会因为浏览器安全限制无法加载本地 JSON 文件。如果遇到这种情况，可以用以下方式：\n# 在 search/ 目录下启动一个简单的本地服务器\ncd search\npython -m http.server 8080\n# 然后在浏览器访问 http://localhost:8080",
+    "crumbs": [
+      "<span class='chapter-number'>8</span>  <span class='chapter-title'>语料搜索系统</span>"
+    ]
+  },
+  {
+    "objectID": "search-guide.html#how-to-use",
+    "href": "search-guide.html#how-to-use",
+    "title": "语料搜索系统",
+    "section": "如何使用检索界面",
+    "text": "如何使用检索界面\n\n基础搜索\n在顶部搜索框输入关键词，结果会即时更新。\n\n\n\n搜索框示意图\n\n\n搜索支持： - 单个词：共同富裕 - 多个词（空格隔开，结果需同时包含）：腐败 治理 - 短语：依法治国\n\n\n按类别筛选\n点击右侧下拉菜单，选择只在某类文件中搜索：\n\n\n\n选项\n对应数据\n\n\n\n\n习近平讲话\n习近平系列重要讲话数据库\n\n\n人民网政绩观\n人民网政绩观专题文章\n\n\n领导人著作\n各领导人著作选集\n\n\n党代会\n全国党代会文件\n\n\n两会\n全国两会文件\n\n\n白皮书\n政府白皮书\n\n\n党规党史\n党规党史与五年规划\n\n\n意识形态\n意识形态文件\n\n\n求是\n《求是》杂志\n\n\n\n\n\n按时间筛选\n在「年份范围」输入框中填写起止年份，如 2012 至 2020。",
+    "crumbs": [
+      "<span class='chapter-number'>8</span>  <span class='chapter-title'>语料搜索系统</span>"
+    ]
+  },
+  {
+    "objectID": "search-guide.html#results",
+    "href": "search-guide.html#results",
+    "title": "语料搜索系统",
+    "section": "搜索结果说明",
+    "text": "搜索结果说明\n每条搜索结果包含：\n\n  \n    两会\n    政府工作报告\n    2021\n  \n  2021政府工作报告.xlsx\n  \n    …扎实推动共同富裕，完善分配制度，增加低收入群体收入，扩大中等收入群体，推进基本公共服务均等化…\n  \n\n\n类别徽章：颜色标识数据类别\n标题：文件名称或文章标题\n日期：发布年份（部分数据有精确日期）\n来源文件：原始文件名\n文本片段：包含关键词的上下文（关键词高亮显示）",
+    "crumbs": [
+      "<span class='chapter-number'>8</span>  <span class='chapter-title'>语料搜索系统</span>"
+    ]
+  },
+  {
+    "objectID": "search-guide.html#examples",
+    "href": "search-guide.html#examples",
+    "title": "语料搜索系统",
+    "section": "使用场景示例",
+    "text": "使用场景示例\n场景一：找到「共同富裕」最早出现在什么文件里\n搜索「共同富裕」，将年份筛选设为 1998 至 2015，查看哪些早期文件中有这个词，以及当时的语境是什么。\n场景二：查找反腐相关段落，用于对话分析\n搜索「反腐」，类别选「习近平讲话」，找到相关片段后，把文本粘贴给配合技能的大模型进行深度分析。\n场景三：对比同一词在不同类别文件中的使用\n先搜索某词，类别选「两会」，记录结果；再改选「白皮书」，对比同一概念在不同类型官方文件中的叙述差异。",
+    "crumbs": [
+      "<span class='chapter-number'>8</span>  <span class='chapter-title'>语料搜索系统</span>"
+    ]
+  },
+  {
+    "objectID": "scripts-guide.html",
+    "href": "scripts-guide.html",
+    "title": "数据加载脚本",
+    "section": "",
+    "text": "为什么需要加载脚本？\n数据集包含 308 个分散的 Excel 文件。如果想批量分析多个文件（比如「加载全部 26 年的两会数据」），手动打开每个文件会非常繁琐。\nscripts/load_data.py 提供了简单的函数，让你用一行代码加载整类数据。",
+    "crumbs": [
+      "<span class='chapter-number'>9</span>  <span class='chapter-title'>数据加载脚本</span>"
+    ]
+  },
+  {
+    "objectID": "scripts-guide.html#install",
+    "href": "scripts-guide.html#install",
+    "title": "数据加载脚本",
+    "section": "安装依赖",
+    "text": "安装依赖\npip install pandas openpyxl",
+    "crumbs": [
+      "<span class='chapter-number'>9</span>  <span class='chapter-title'>数据加载脚本</span>"
+    ]
+  },
+  {
+    "objectID": "scripts-guide.html#basic-usage",
+    "href": "scripts-guide.html#basic-usage",
+    "title": "数据加载脚本",
+    "section": "基础用法",
+    "text": "基础用法\n\n查看所有可用类别\nimport sys\nsys.path.insert(0, '.')  # 在数据集根目录运行\nfrom scripts.load_data import list_categories\n\nlist_categories()\n输出：\n==================================================\n国家话语数据集 - 可用数据类别\n==================================================\n  '习近平讲话': 习近平系列重要讲话数据库（CSV，48,610条）\n  '人民网政绩观': 人民网政绩观专题文章（CSV，194条）\n  '领导人著作': 领导人著作选集（毛/邓/江/习等，32个文件）\n  '党代会': 全国党代会文件（16-19大，39个文件）\n  '两会': 全国两会文件（1998-2023，130个文件）\n  '白皮书': 政府白皮书（2010-2021，89个文件）\n  '党规党史': 党规党史与五年规划（14个文件）\n  '意识形态': 意识形态与发展理念文件（3个文件）\n  '求是': 《求是》杂志（42个文件）\n\n\n加载某类数据\nfrom scripts.load_data import load_category\n\n# 加载全部两会数据\ndf = load_category('两会')\n# 输出：已加载 '两会'：XXXXX 条记录（来自 130 个文件）\n\n# 加载习近平讲话\ndf = load_category('习近平讲话')\n\n# 加载白皮书\ndf = load_category('白皮书')\n\n\n筛选数据\n# 按关键词筛选\ndf = load_category('两会', keyword='共同富裕')\n\n# 按年份范围筛选\ndf = load_category('两会', year_start=2012, year_end=2020)\n\n# 同时筛选\ndf = load_category('习近平讲话', keyword='反腐', year_start=2013, year_end=2023)",
+    "crumbs": [
+      "<span class='chapter-number'>9</span>  <span class='chapter-title'>数据加载脚本</span>"
+    ]
+  },
+  {
+    "objectID": "scripts-guide.html#keyword-count",
+    "href": "scripts-guide.html#keyword-count",
+    "title": "数据加载脚本",
+    "section": "统计关键词年度频次",
+    "text": "统计关键词年度频次\nfrom scripts.load_data import load_category, count_keyword_by_year\n\n# 加载数据\ndf = load_category('习近平讲话')\n\n# 统计年度词频\ntrend = count_keyword_by_year(df, '共同富裕')\nprint(trend)\n输出示例：\n年份\n2013     2\n2014     4\n...\n2021    87\n2022   132\n2023    98\nName: _freq, dtype: int64",
+    "crumbs": [
+      "<span class='chapter-number'>9</span>  <span class='chapter-title'>数据加载脚本</span>"
+    ]
+  },
+  {
+    "objectID": "scripts-guide.html#export",
+    "href": "scripts-guide.html#export",
+    "title": "数据加载脚本",
+    "section": "导出为 CSV",
+    "text": "导出为 CSV\nfrom scripts.load_data import load_category, export_to_csv\n\ndf = load_category('两会', keyword='改革')\nexport_to_csv(df, '两会_改革相关段落.csv')\n# 输出：已导出：两会_改革相关段落.csv（XXXX 条记录）\n导出的 CSV 可以用 Excel 打开，也可以直接复制内容粘贴给大模型进行分析。",
+    "crumbs": [
+      "<span class='chapter-number'>9</span>  <span class='chapter-title'>数据加载脚本</span>"
+    ]
+  },
+  {
+    "objectID": "scripts-guide.html#with-codewriter",
+    "href": "scripts-guide.html#with-codewriter",
+    "title": "数据加载脚本",
+    "section": "与代码生成技能配合使用",
+    "text": "与代码生成技能配合使用\n如果你使用 代码生成技能（skill_codewriter），大模型生成的代码会自动导入本脚本中的函数，让数据加载部分更简洁：\n# 大模型生成的代码通常会这样调用\nimport sys\nsys.path.insert(0, '/path/to/StateDiscourseDataset')\nfrom scripts.load_data import load_category, count_keyword_by_year",
+    "crumbs": [
+      "<span class='chapter-number'>9</span>  <span class='chapter-title'>数据加载脚本</span>"
+    ]
+  }
+]
